@@ -66,7 +66,7 @@ except Exception as e:
 
 # Helper functions
 def is_valid_email(email):
-    email_regex = r'^[:w:.-]+@([:w:-]+:.)+[:A-Za-z:]{2,}$'
+    email_regex = r'^[\w\.-]+@([\w-]+\.)+[A-Za-z]{2,}$'
     return re.match(email_regex, email) is not None
 
 def is_valid_password(password):
