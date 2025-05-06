@@ -8,6 +8,7 @@ Shakuni is a security deception platform designed to deploy, manage, and monitor
 ## Prerequisites
 - **Docker** (recommended for deployment)
 - **MongoDB** (can be run as a container)
+- **Usage** Upon first setup go ahead and register a user to be used, and login, then go to the settings section and add your tf state bucket, for any webhook usages you will need a public ip( eith using ngrok, or having a public ip interface for the app deployed publically)
 
 ## Running with Docker and MongoDB
 
@@ -132,6 +133,8 @@ docker run -it --rm \
 You can mount only the credential directories you need for your cloud provider(s).
 
 The backend and frontend will be available at `http://localhost:5000` and `http://localhost:8080` respectively.
+
+Upon first setup go ahead and register a user to be used, and login, then go to the settings section and add your tf state bucket, for any webhook usages you will need a public ip( eith using ngrok, or having a public ip interface for the app deployed publically)
 
 ## Custom Deceptions
 
