@@ -6,3 +6,4 @@ bcrypt
 python-dotenv
 boto3
 APScheduler
+reportlab

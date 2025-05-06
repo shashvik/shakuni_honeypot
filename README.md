@@ -1,9 +1,74 @@
 # Shakuni Project README
 
 ## Overview
+# Shakuni
+
 Shakuni is a security deception platform designed to deploy, manage, and monitor honeypots and decoy assets in cloud environments. It features a Flask-based backend with MongoDB integration and a modern React (Vite + TypeScript + Shadcn UI) frontend. The platform supports both high-interaction and low/medium-interaction honeypots, with infrastructure-as-code managed via Terraform.
 
 ## Prerequisites
+- **Docker** (recommended for deployment)
+- **MongoDB** (can be run as a container)
+
+## Running with Docker and MongoDB
+
+### 1. Create a Docker network
+This allows the Shakuni container and MongoDB container to communicate:
+
+```bash
+docker network create shakuni-net
+```
+
+### 2. Deploy MongoDB as a container
+
+```bash
+docker run -d \
+  --name mongo \
+  --network shakuni-net \
+  -e MONGO_INITDB_DATABASE=shakuni \
+  -p 27017:27017 \
+  mongo
+```
+
+- This starts MongoDB on the `shakuni-net` network with the default database `shakuni`.
+
+### 3. Build the Shakuni Docker image
+
+```bash
+docker build -t shakuni .
+```
+
+### 4. Run the Shakuni container
+
+```bash
+docker run -it --rm \
+  --name shakuni \
+  --network shakuni-net \
+  -p 5000:5000 \
+  -p 8080:8080 \
+  -v ~/.aws:/root/.aws \
+  -e MONGO_URI=mongodb://mongo:27017/shakuni \
+  shakuni
+```
+
+- The `MONGO_URI` uses `mongo` as the hostname, which resolves to the MongoDB container on the same network.
+- The backend will connect to MongoDB at `mongodb://mongo:27017/shakuni`.
+
+### 5. Access the Application
+- **Frontend:** http://localhost:8080
+- **Backend API:** http://localhost:5000
+
+## Running with MongoDB on Host (macOS)
+If you want to use a MongoDB instance running on your Mac instead of a container, set the `MONGO_URI` to:
+
+```bash
+-e MONGO_URI=mongodb://host.docker.internal:27017/shakuni
+```
+
+This allows the container to connect to the host's MongoDB instance.
+
+## Environment Variables
+- `MONGO_URI`: MongoDB connection string (default: `mongodb://localhost:27017/shakuni`)
+- `JWT_SECRET_KEY`: Secret key for JWT tokens (change in production)
 - **Cloud Credentials:**
   - Ensure you have valid credentials set up for the cloud provider(s) you plan to use:
     - **AWS:** Configure using environment variables, AWS CLI, or credentials file (`~/.aws/credentials`).
