@@ -1,0 +1,12 @@
+{
+  "name": "shakuni-backend",
+  "version": "1.0.0",
+  "description": "Flask backend for Shakuni project with MongoDB integration",
+  "main": "app.py",
+  "scripts": {
+    "start": "python app.py",
+    "install": "pip install -r requirements.txt"
+  },
+  "author": "",
+  "license": "ISC"
+}

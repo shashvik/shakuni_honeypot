@@ -1,0 +1,38 @@
+.alerts-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alerts-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.alerts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alert-item {
+  margin-bottom: 15px;
+}
+
+.alert-item .MuiAlert-root {
+  width: 100%; /* Ensure alert takes full width */
+}
+
+.alert-item p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  word-break: break-word; /* Prevent long strings from overflowing */
+}
+
+.alert-item strong {
+  margin-right: 5px;
+}

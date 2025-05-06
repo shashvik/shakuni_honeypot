@@ -1,0 +1,349 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes grid {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(30px) translateY(30px); }
+}
+
+@layer base {
+  :root {
+    --background: 220 13% 95%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 31% 54%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262 83% 88%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .dark {
+    --background: 222 20% 12%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 25% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 25% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83% 68%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 260 31% 54%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262 83% 68%;
+
+    --sidebar-background: 222 25% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 262 83% 68%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 222 18% 19%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 18% 19%;
+    --sidebar-ring: 262 83% 68%;
+  }
+
+  .cyberpunk-dark {
+    --background: 250 20% 6%;
+    --foreground: 180 100% 70%;
+
+    --card: 250 30% 10%;
+    --card-foreground: 180 100% 80%;
+
+    --popover: 250 30% 10%;
+    --popover-foreground: 180 100% 80%;
+
+    --primary: 320 100% 65%;
+    --primary-foreground: 250 20% 6%;
+
+    --secondary: 276 100% 60%;
+    --secondary-foreground: 250 20% 6%;
+
+    --muted: 250 30% 12%;
+    --muted-foreground: 180 70% 60%;
+
+    --accent: 320 100% 55%;
+    --accent-foreground: 250 20% 6%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 250 20% 6%;
+
+    --border: 250 30% 15%;
+    --input: 250 30% 15%;
+    --ring: 320 100% 65%;
+
+    --sidebar-background: 250 30% 10%;
+    --sidebar-foreground: 180 100% 80%;
+    --sidebar-primary: 320 100% 65%;
+    --sidebar-primary-foreground: 250 20% 6%;
+    --sidebar-accent: 250 30% 20%;
+    --sidebar-accent-foreground: 180 100% 80%;
+    --sidebar-border: 250 30% 20%;
+    --sidebar-ring: 320 100% 65%;
+  }
+  
+  .midnight-dark {
+    --background: 230 40% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 40% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 40% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 216 100% 60%;
+    --primary-foreground: 230 40% 8%;
+
+    --secondary: 226 80% 40%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 40% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 216 100% 50%;
+    --accent-foreground: 230 40% 8%;
+
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 40% 20%;
+    --input: 230 40% 20%;
+    --ring: 216 100% 60%;
+
+    --sidebar-background: 230 40% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 216 100% 60%;
+    --sidebar-primary-foreground: 230 40% 8%;
+    --sidebar-accent: 230 40% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 40% 20%;
+    --sidebar-ring: 216 100% 60%;
+  }
+  
+  .arctic-light {
+    --background: 210 50% 96%;
+    --foreground: 220 40% 16%;
+
+    --card: 210 50% 98%;
+    --card-foreground: 220 40% 16%;
+
+    --popover: 210 50% 98%;
+    --popover-foreground: 220 40% 16%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 210 50% 98%;
+
+    --secondary: 195 80% 40%;
+    --secondary-foreground: 210 50% 98%;
+
+    --muted: 210 50% 92%;
+    --muted-foreground: 220 20% 40%;
+
+    --accent: 200 100% 40%;
+    --accent-foreground: 210 50% 98%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 210 50% 98%;
+
+    --border: 210 50% 90%;
+    --input: 210 50% 90%;
+    --ring: 200 100% 50%;
+
+    --sidebar-background: 210 50% 98%;
+    --sidebar-foreground: 220 40% 16%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 210 50% 98%;
+    --sidebar-accent: 210 50% 92%;
+    --sidebar-accent-foreground: 220 40% 16%;
+    --sidebar-border: 210 50% 90%;
+    --sidebar-ring: 200 100% 50%;
+  }
+  
+  .sunset-light {
+    --background: 30 30% 96%;
+    --foreground: 20 40% 16%;
+
+    --card: 30 30% 98%;
+    --card-foreground: 20 40% 16%;
+
+    --popover: 30 30% 98%;
+    --popover-foreground: 20 40% 16%;
+
+    --primary: 20 100% 60%;
+    --primary-foreground: 30 30% 98%;
+
+    --secondary: 30 80% 50%;
+    --secondary-foreground: 30 30% 98%;
+
+    --muted: 30 30% 92%;
+    --muted-foreground: 20 20% 40%;
+
+    --accent: 20 100% 50%;
+    --accent-foreground: 30 30% 98%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 30 30% 98%;
+
+    --border: 30 30% 90%;
+    --input: 30 30% 90%;
+    --ring: 20 100% 60%;
+
+    --sidebar-background: 30 30% 98%;
+    --sidebar-foreground: 20 40% 16%;
+    --sidebar-primary: 20 100% 60%;
+    --sidebar-primary-foreground: 30 30% 98%;
+    --sidebar-accent: 30 30% 92%;
+    --sidebar-accent-foreground: 20 40% 16%;
+    --sidebar-border: 30 30% 90%;
+    --sidebar-ring: 20 100% 60%;
+  }
+  
+  .forest-light {
+    --background: 100 30% 96%;
+    --foreground: 140 40% 16%;
+
+    --card: 100 30% 98%;
+    --card-foreground: 140 40% 16%;
+
+    --popover: 100 30% 98%;
+    --popover-foreground: 140 40% 16%;
+
+    --primary: 140 70% 40%;
+    --primary-foreground: 100 30% 98%;
+
+    --secondary: 120 60% 45%;
+    --secondary-foreground: 100 30% 98%;
+
+    --muted: 100 30% 92%;
+    --muted-foreground: 140 20% 40%;
+
+    --accent: 140 70% 30%;
+    --accent-foreground: 100 30% 98%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 100 30% 98%;
+
+    --border: 100 30% 90%;
+    --input: 100 30% 90%;
+    --ring: 140 70% 40%;
+
+    --sidebar-background: 100 30% 98%;
+    --sidebar-foreground: 140 40% 16%;
+    --sidebar-primary: 140 70% 40%;
+    --sidebar-primary-foreground: 100 30% 98%;
+    --sidebar-accent: 100 30% 92%;
+    --sidebar-accent-foreground: 140 40% 16%;
+    --sidebar-border: 100 30% 90%;
+    --sidebar-ring: 140 70% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  .cyber-gradient {
+    @apply bg-gradient-to-r from-cyber-primary to-cyber-secondary;
+  }
+  
+  .cyber-card {
+    @apply bg-card border border-border rounded-lg shadow-md;
+  }
+  
+  .pulse-dot {
+    @apply relative before:absolute before:w-2 before:h-2 before:bg-green-500 before:rounded-full before:animate-pulse-slow;
+  }
+}
+
+/* ReactFlow Custom Styles */
+.cyber-node {
+  @apply border-2 border-primary bg-card text-foreground p-2 rounded-md shadow-md;
+  min-width: 150px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.react-flow__attribution {
+  background: transparent !important;
+  color: var(--muted-foreground) !important;
+}
+
+.react-flow__controls {
+  @apply bg-card border border-border shadow-md !important;
+}
+
+.react-flow__controls-button {
+  @apply border-border text-foreground hover:bg-muted !important;
+}
+
+.react-flow__minimap {
+  @apply bg-card border border-border shadow-md !important;
+}
+
+.react-flow__edge-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5, 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}

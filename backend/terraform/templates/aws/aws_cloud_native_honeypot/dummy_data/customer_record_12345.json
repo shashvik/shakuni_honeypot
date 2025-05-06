@@ -1,0 +1,15 @@
+{
+  "customerId": "CUST-12345",
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice.smith.test@example.com",
+  "address": {
+    "street": "123 Fake St",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "90210"
+  },
+  "accountCreated": "2023-01-15T10:30:00Z",
+  "lastLogin": "2024-05-01T15:00:00Z",
+  "notes": "Archived record - GDPR compliance request."
+}

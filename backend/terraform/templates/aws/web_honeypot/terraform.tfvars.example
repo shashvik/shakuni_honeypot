@@ -1,0 +1,11 @@
+# Example terraform.tfvars file
+# Copy this file to terraform.tfvars and update the values
+
+# Required variables
+api_key = "YOUR_API_KEY" # API key for authentication
+
+# Optional variables - uncomment and modify as needed
+# aws_region      = "us-east-1"          # AWS region for deployment
+# vpc_cidr        = "10.208.0.0/16"      # CIDR block for the VPC
+# subnet_cidr     = "10.208.1.0/24"      # CIDR block for the subnet
+# api_endpoint    = "http://your-api-server:5000/api/logs/ingest" # API endpoint URL
