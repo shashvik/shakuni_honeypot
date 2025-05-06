@@ -1,4 +1,4 @@
-# Shakuni Project README
+# Shakuni
 
 ## Overview
 # Shakuni
